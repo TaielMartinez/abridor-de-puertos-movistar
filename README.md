@@ -1,4 +1,4 @@
-# abtidor-de-puertos-movistar
+# Abridor de puertos movistar
 
 Hola, cree este pequeño script para abrir puertos de manera rapida en routers movistar.
 
