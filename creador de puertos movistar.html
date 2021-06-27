@@ -1,16 +1,20 @@
 <script>
 
+    // Puertos que queremos abrir 
+    const puertos_a_abrir = [8080, 3000, 25565, 28565, 25566, 80, 443, 22, 50000]
 
+    // Datos del formulario
+    const local_ip = '192.168.1.38'
+    const nombre = 'nombre'
 
-
-    const puertos_rapidos = [8080, 3000, 25565, 28565, 25566, 80, 443, 22, 50000]
-
+    // Si ejecuta dos veces el script cambie este numero para evita repetir nombres
+    const nombres_usados = 0
 
 
 
 </script>
 
-        <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -21,39 +25,17 @@
 </head>
 
 <body>
-
     <div id="texto"></div>
-
     <script>
-
-
-
+        // Ejemplo del codigo generado
         // addIndividual(['-1','name','6','192.168.1.2','2000','2001','1000','1','ppp0','0.0.0.0'])
-
-
         var html = ``
-        //html += `const open_ports = [`
-
-
-
-        // ABRIR PUERTOS RAPIDOS
-        // Misma ip y nombres autogenerados
-        const local_ip = '192.168.1.38'
-        const nombre = 'nombre'
-        const nombres_usados = 0
-
-        for (let i = 0; i < puertos_rapidos.length; i++) {
-            const port = puertos_rapidos[i];
+        for (let i = 0; i < puertos_a_abrir.length; i++) {
+            const port = puertos_a_abrir[i];
             html += `addIndividual(['-1','${nombre} ${i + nombres_usados}','6','${local_ip}','${port}','${port}','${port}','1','ppp0','0.0.0.0'])<br><br>`
         }
-
-        //html += `]; for (let ip = 0; ip < open_ports.length; ip++) {addIndividual(open_ports[ip])}; location.reload();`
-
         document.getElementById("texto").innerHTML = html;
-
-
     </script>
-
 </body>
 
 </html>
