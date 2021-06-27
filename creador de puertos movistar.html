@@ -1,0 +1,59 @@
+<script>
+
+
+
+
+    const puertos_rapidos = [8080, 3000, 25565, 28565, 25566, 80, 443, 22, 50000]
+
+
+
+
+</script>
+
+        <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>creador de puertos movistar</title>
+</head>
+
+<body>
+
+    <div id="texto"></div>
+
+    <script>
+
+
+
+        // addIndividual(['-1','name','6','192.168.1.2','2000','2001','1000','1','ppp0','0.0.0.0'])
+
+
+        var html = ``
+        //html += `const open_ports = [`
+
+
+
+        // ABRIR PUERTOS RAPIDOS
+        // Misma ip y nombres autogenerados
+        const local_ip = '192.168.1.38'
+        const nombre = 'nombre'
+        const nombres_usados = 0
+
+        for (let i = 0; i < puertos_rapidos.length; i++) {
+            const port = puertos_rapidos[i];
+            html += `addIndividual(['-1','${nombre} ${i + nombres_usados}','6','${local_ip}','${port}','${port}','${port}','1','ppp0','0.0.0.0'])<br><br>`
+        }
+
+        //html += `]; for (let ip = 0; ip < open_ports.length; ip++) {addIndividual(open_ports[ip])}; location.reload();`
+
+        document.getElementById("texto").innerHTML = html;
+
+
+    </script>
+
+</body>
+
+</html>
